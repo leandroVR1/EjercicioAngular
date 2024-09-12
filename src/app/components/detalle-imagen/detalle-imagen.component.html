@@ -1,0 +1,7 @@
+<div *ngIf="imagen">
+    <h2>{{ imagen.titulo }}</h2>
+    <img [src]="imagen.url" alt="{{ imagen.titulo }}">
+    <p>{{ imagen.descripcion }}</p>
+    <p>Fecha: {{ imagen.fecha }}</p>
+  </div>
+  
