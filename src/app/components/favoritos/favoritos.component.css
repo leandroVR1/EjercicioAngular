@@ -1,0 +1,40 @@
+.favoritos {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .favoritos h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .favoritos img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  .favoritos-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .favoritos-item button {
+    margin-left: auto;
+    padding: 5px 10px;
+    border: none;
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .favoritos-item button:hover {
+    background-color: #ff4c4c;
+  }
+  

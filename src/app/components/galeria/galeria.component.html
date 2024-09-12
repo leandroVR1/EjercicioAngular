@@ -1,57 +1,27 @@
-<!-- Filtro por categorías -->
+
 <div>
   <label for="categoria">Filtrar por categoría:</label>
   <select id="categoria" [(ngModel)]="categoriaSeleccionada">
     <option value="">Todas</option>
     <option value="Naturaleza">Naturaleza</option>
-    <option value="Ciudad">Ciudad</option>
+    <option value="Gastronomia">Gastronomia</option>
     <option value="Tecnología">Tecnología</option>
   </select>
 </div>
 
-<!-- Mostrar galería de imágenes filtradas -->
-<div *ngIf="imagenesFiltradas().length > 0; else noImagenes">
-  <div *ngFor="let imagen of imagenesFiltradas()">
-    <div>
-      <img [src]="imagen.url" alt="{{ imagen.titulo }}" (click)="seleccionarImagen(imagen)">
-      <h3>{{ imagen.titulo }}</h3>
-      <p>{{ imagen.descripcion }}</p>
 
-      <!-- Botón para marcar como favorito -->
-      <button (click)="toggleFavorito(imagen)">
-        {{ esFavorito(imagen) ? 'Eliminar de Favoritos' : 'Marcar como Favorito' }}
-      </button>
-    </div>
+<div *ngIf="imagenesFiltradas().length > 0; else noImagenes" class="galeria-grid">
+  <div *ngFor="let imagen of imagenesFiltradas()" class="imagen-item">
+    <img [src]="imagen.url" alt="{{ imagen.titulo }}" (click)="seleccionarImagenHandler(imagen)">
+    <h3>{{ imagen.titulo }}</h3>
+    <p>{{ imagen.descripcion }}</p>
+    <button (click)="toggleFavorito(imagen)">
+      {{ esFavorito(imagen) ? 'Eliminar de Favoritos' : 'Marcar como Favorito' }}
+    </button>
   </div>
 </div>
 
-<!-- Mensaje cuando no hay imágenes en la categoría seleccionada -->
+
 <ng-template #noImagenes>
   <p>No hay imágenes disponibles en esta categoría.</p>
 </ng-template>
-
-<!-- Detalles de la imagen seleccionada -->
-<div *ngIf="imagenSeleccionada" class="detalle-imagen">
-  <h2>{{ imagenSeleccionada.titulo }}</h2>
-  <img [src]="imagenSeleccionada.url" alt="{{ imagenSeleccionada.titulo }}">
-  <p>{{ imagenSeleccionada.descripcion }}</p>
-  <p>Fecha: {{ imagenSeleccionada.fecha }}</p>
-  <button (click)="imagenSeleccionada = null">Cerrar Detalles</button>
-</div>
-
-<!-- Lista de imágenes favoritas -->
-<div>
-  <h2>Imágenes Favoritas</h2>
-  <div *ngIf="favoritos.length > 0; else noFavoritos">
-    <div *ngFor="let imagen of favoritos">
-      <img [src]="imagen.url" alt="{{ imagen.titulo }}">
-      <h3>{{ imagen.titulo }}</h3>
-      <p>{{ imagen.descripcion }}</p>
-    </div>
-  </div>
-
-  <!-- Mensaje condicional si no hay imágenes favoritas -->
-  <ng-template #noFavoritos>
-    <p>No tienes imágenes favoritas aún.</p>
-  </ng-template>
-</div>

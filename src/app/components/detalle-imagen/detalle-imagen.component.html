@@ -1,7 +1,9 @@
-<div *ngIf="imagen">
+<div *ngIf="imagen" class="modal-overlay" (click)="cerrarModal()">
+  <div class="detalle-imagen" (click)="$event.stopPropagation()">
+    <button class="cerrar-modal" (click)="cerrarModal()">×</button>
     <h2>{{ imagen.titulo }}</h2>
-    <img [src]="imagen.url" alt="{{ imagen.titulo }}">
+    <img [src]="imagen.url" alt="{{ imagen.titulo }}" class="imagen-detalle">
     <p>{{ imagen.descripcion }}</p>
     <p>Fecha: {{ imagen.fecha }}</p>
   </div>
-  
+</div>

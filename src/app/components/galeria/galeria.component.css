@@ -1,0 +1,39 @@
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; 
+    padding: 16px;
+  }
+  
+ 
+  .imagen-item {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    text-align: center; 
+    border: 1px solid #ddd; 
+    border-radius: 16px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.733); 
+    height: 300px; 
+  }
+
+  .imagen-item img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-bottom: 1px solid #ddd; 
+  }
+  
+  
+  .imagen-item h3, .imagen-item p {
+    margin: 8px 0;
+  }
+  
+  
+  .imagen-item button {
+    margin-top: auto; 
+    margin-bottom: 8px;
+  }
+  

@@ -1,11 +1,11 @@
-<div *ngIf="favoritos.length > 0; else noFavoritos">
-    <div *ngFor="let imagen of favoritos">
-      <img [src]="imagen.url" alt="{{ imagen.titulo }}">
-      <h3>{{ imagen.titulo }}</h3>
-      <p>{{ imagen.descripcion }}</p>
-    </div>
+<div class="favoritos">
+  <h2>Imágenes Favoritas</h2>
+  <div *ngIf="favoritos.length === 0">
+    <p>No tienes imágenes favoritas aún.</p>
   </div>
-  <ng-template #noFavoritos>
-    <p>No tienes imágenes favoritas aún</p>
-  </ng-template>
-  
+  <div *ngFor="let imagen of favoritos" class="favorito-item">
+    <img [src]="imagen.url" alt="{{ imagen.titulo }}" class="imagen">
+    <h3>{{ imagen.titulo }}</h3>
+    <button (click)="quitarDeFavoritos(imagen)">Quitar de Favoritos</button>
+  </div>
+</div>

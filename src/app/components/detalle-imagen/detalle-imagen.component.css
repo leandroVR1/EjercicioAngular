@@ -1,0 +1,45 @@
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+
+  .detalle-imagen {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative; 
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow: auto; /* Para manejar el desbordamiento del contenido */
+  }
+  
+ 
+  .detalle-imagen img {
+    width: 55%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  
+  .cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  
